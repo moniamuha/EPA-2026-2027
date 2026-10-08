@@ -27,5 +27,9 @@ fi
 # heres a brand new command: 
 # it calls ps -ef, then pipes it into word counter
 # then stores the result in ct
+
+#ps is a command that lists nr of processes running on machine
+
+#the pipe 
 ct=$(ps -ef | wc -l)
 echo "There are $ct processes running on this machine"
