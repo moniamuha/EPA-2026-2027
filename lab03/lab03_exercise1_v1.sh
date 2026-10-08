@@ -29,7 +29,7 @@ fi
 # then stores the result in ct
 
 #ps is a command that lists nr of processes running on machine
-
+# ef are options where "e" is & "f" is 
 #the pipe 
 ct=$(ps -ef | wc -l)
 echo "There are $ct processes running on this machine"
