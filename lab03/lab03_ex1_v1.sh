@@ -4,15 +4,21 @@
 echo "This is your first parameter = $1"
 
 #count nr of processes based on user parameter
+#$# is the number of parameter
 
-for c in {1..5}; do
-	echo "Counting the number of processes...:"
-	# note the spaces around if [ ]
+c = $1
+nr = '^[0-9]+$'
+
+if [$# -eq 0 || ]; then
+	echo "Error: the number of paramaters is too small"
+	exit
+else
+	echo "Counting the number of processes..."
+
 	#check if user input is a number, if not then display message
-	if [ == $c ]; then
+	if [$c =~ $nr]; then
 		echo "The maximum number of processes has been exceeded..."
-	fi
-done
+fi
 
 # how do we pass parameters from the command line
 # into this bash script. 
@@ -28,9 +34,15 @@ fi
 # it calls ps -ef, then pipes it into word counter
 # then stores the result in ct
 
-#ps is a command that lists nr of processes running on machine
+#ps is a command that lists processes running on machine
 # ef are options where "e" is & "f" is 
-#the pipe
 #wc count the number of processes 
+# -l option 
+
 ct=$(ps -ef | wc -l)
-echo "There are $ct processes running on this machine"
+
+if ["ct" -gt "$1"]; then
+	echo "Running command to count nr of processes..."
+	
+elif ["ct" -lt "$1"]; then
+	echo "There are $ct processes running on this machine"
