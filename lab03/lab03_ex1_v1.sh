@@ -1,14 +1,14 @@
 ##!/bin/bash
 
-# this is a comment
+#check if parameter nr is input
+echo "This is your first parameter = $1"
 
 #count nr of processes based on user parameter
 
 for c in {1..5}; do
 	echo "Counting the number of processes...:"
-
-	# if does not use == it uses -eq
 	# note the spaces around if [ ]
+	#check if user input is a number, if not then display message
 	if [ == $c ]; then
 		echo "The maximum number of processes has been exceeded..."
 	fi
