@@ -30,6 +30,7 @@ fi
 
 #ps is a command that lists nr of processes running on machine
 # ef are options where "e" is & "f" is 
-#the pipe 
+#the pipe
+#wc count the number of processes 
 ct=$(ps -ef | wc -l)
 echo "There are $ct processes running on this machine"
