@@ -4,30 +4,19 @@
 echo "This is your first parameter = $1"
 
 #count nr of processes based on user parameter
-#$# is the number of parameter
+#$# is the number of parameters
 
-c = $1
-nr = '^[0-9]+$'
+$c = $1
+$nr = '^[0-9]+$'
 
-if [$# -eq 0 || ]; then
-	echo "Error: the number of paramaters is too small"
-	exit
-else
-	echo "Counting the number of processes..."
+
+if [ -z = $1]; then
+	echo "No parameters passed"
 
 	#check if user input is a number, if not then display message
-	if [$c =~ $nr]; then
-		echo "The maximum number of processes has been exceeded..."
-fi
-
-# how do we pass parameters from the command line
-# into this bash script. 
-# we use the notation $1, $2 etc to represent
-# the first, second etc parameter into this script
-if [ -z $1 ]; then
-	echo "You didn't pass any parameters to $0"
-else
-	echo "You passed in $1 to $0"
+	#"=~" menas that 
+else [$c =~ $nr]; then
+		echo "User passed $1 into the script"
 fi
 
 # heres a brand new command: 
