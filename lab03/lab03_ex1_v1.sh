@@ -1,37 +1,31 @@
-##!/bin/bash
-
-#check if parameter nr is input
-echo "This is your first parameter = $1"
-
-#count nr of processes based on user parameter
-#$# is the number of parameters
-
-$c = $1
-$nr = '^[0-9]+$'
+#!/bin/bash
 
 
-if [ -z = $1]; then
-	echo "No parameters passed"
+nr = '^[0-9]+$'
 
+if [ $# == 0 ]; then
+	echo "Invalid input. Please enter a number of 1 or greater"
+exit
 	#check if user input is a number, if not then display message
-	#"=~" menas that 
-else [$c =~ $nr]; then
-		echo "User passed $1 into the script"
+	#"=~" compares a string with value of regular expression variable nr 
+elif [ $# -eq 1 || $# -gt 1]; then
+	echo "Number of parameters is $#"
+	echo "User passed $1 into the script"
+elif [[$1 =~ $nr ]]; then
+	echo "Countign number of processes running..."
 fi
-
-# heres a brand new command: 
-# it calls ps -ef, then pipes it into word counter
-# then stores the result in ct
 
 #ps is a command that lists processes running on machine
 # ef are options where "e" is & "f" is 
 #wc count the number of processes 
 # -l option 
+#result is stored in ct
 
-ct=$(ps -ef | wc -l)
+ct = $(ps -e | wc -l)
 
-if ["ct" -gt "$1"]; then
-	echo "Running command to count nr of processes..."
-	
-elif ["ct" -lt "$1"]; then
-	echo "There are $ct processes running on this machine"
+if [ "$ct" -gt "$1" ]; then
+	echo "Maximum number of processes exceeded"
+exit
+else
+	echo "The maximum number of processes NOT exceeded"
+fi
