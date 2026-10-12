@@ -3,6 +3,9 @@
 	#"=~" compares a string with value of regular expression variable nr
 	#[0-9]+$ is a regular expression that matches numbers
 
+#add date/time stamp
+
+
 if [[ $# != 1 || $1 < 1 ]]; then
 	echo "Input invalid. Please enter a number of 1 or greater"
 	exit 1
