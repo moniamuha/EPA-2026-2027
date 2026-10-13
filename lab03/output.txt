@@ -1,1 +1,23 @@
-Input invalid. Please enter a number of 1 or greater
+Number of parameters is: 1
+User passed 19 into the script
+Counting the number of processes running...
+There is 120 processes currently running
+19 is less than 120
+The maximum number of processes NOT exceeded
+Number of parameters is: 1
+User passed 190 into the script
+There is 120 processes currently running 
+190 is greater than 120
+Maximum number of processes exceeded
+Number of parameters is: 1
+User passed 120 into the script
+Counting the number of processes running...
+There is 120 processes currently running
+120 is less than 120
+The maximum number of processes NOT exceeded
+Number of parameters is: 1
+User passed 120 into the script
+COunting the number of processes running...
+There is 120 processes currently running
+120 is equal to 120
+The maximum number of processes NOT exceeded
