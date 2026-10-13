@@ -7,7 +7,7 @@
 
 
 if [[ $# != 1 || $1 < 1 ]]; then
-	echo "Input invalid. Please enter a number of 1 or greater"
+	echo "Input invalid. Please enter a number of 1 or greater" >output.txt
 	exit 1
 elif [[ $1 =~ ^[0-9]+$ ]]; then
 	echo "Number of parameters is: $#"

@@ -1,30 +1,35 @@
 #!/bin/bash
 
-# this is a comment
+	#"=~" compares a string with value of regular expression variable nr
+	#[0-9]+$ is a regular expression that matches numbers
 
-# for loop to count to 10
-for c in {1..5}; do
-	echo "Count: $c"
-
-	# if does not use == it uses -eq
-	# note the spaces around if [ ]
-	if [ $c -eq 3 ]; then
-		echo "found the third item"
-	fi
-done
-
-# how do we pass parameters from the command line
-# into this bash script. 
-# we use the notation $1, $2 etc to represent
-# the first, second etc parameter into this script
-if [ -z $1 ]; then
-	echo "You didn't pass any paraemters to $0"
-else
-	echo "You passed in $1 to $0"
+if [[ $# != 1 || $1 < 1 ]]; then
+	echo "Input invalid. Please enter a number of 1 or greater"
+	exit 1
+elif [[ $1 =~ ^[0-9]+$ ]]; then
+	echo "Number of parameters is: $#"
+	echo "User passed $1 into the script"
 fi
 
-# heres a brand new command: 
-# it calls ps -ef, then pipes it into word counter
-# then stores the result in ct
-ct=$(ps -ef | wc -l)
-echo "There are $ct processes running on this machine"
+#ps is a command that lists processes running on machine
+# "-ef" are options where "e" selects all processes & "f"  
+#"wc" counts the number of processes 
+# "-l" option  prints newline counts
+#result is stored in "ct"
+
+ct=$(( $(ps -ef | wc -l) -1 ))
+#can also do: 
+#ct = $(( $(ps -ef | wc -l) -1)) to be more accurate
+
+#if number of processes counted is more than the user parameter
+if [ "$1" -gt "$ct" ]; then
+	echo "Counting the number of processes running..."
+	echo "There is $ct processes currently running "
+	echo "$1 is greater than $ct"
+	echo "Maximum number of processes exceeded"
+else
+	echo "Counting the number of processes running..."
+	echo "There is $ct processes currently running"
+	echo "$1 is less than $ct"
+	echo "The maximum number of processes NOT exceeded"
+fi
