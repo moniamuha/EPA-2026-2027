@@ -4,7 +4,8 @@
 	#[0-9]+$ is a regular expression that matches numbers
 
 #date/time stamp
-
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+echo "Current timestamp: $timestamp" >>output.txt
 
 if [[ $# != 1 || $1 < 1 ]]; then
 	echo "Input invalid. Please enter a number of 1 or greater" >>output.txt
