@@ -39,3 +39,12 @@ Counting the number of processes running...
 There is 121 processes currently running
 45 is less than 121
 The maximum number of processes NOT exceeded
+Current timestamp: 2026-10-14_16-19-23
+Input invalid. Please enter a number of 1 or greater
+Current timestamp: 2026-10-14_16-19-26
+Number of parameters is: 1
+User passed 67 into the script
+Counting the number of processes running...
+There is 121 processes currently running
+67 is less than 121
+The maximum number of processes NOT exceeded

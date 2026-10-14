@@ -3,8 +3,11 @@
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 message="Current timestamp: $timestamp"
 
-if [[ $# != 1 || $1 < 1 ]]; then
-	message="Input invalid. Please enter a number of 1 or greater"
+if [[ $# != 2 ]]; then
+	message="Input invalid. Please enter two arguments"
+	exit 1
+elif [[ $1 < 1 || $2 == 0 ]]; then
+	message=""
 	exit 1
 elif [[ $1 =~ ^[0-9]+$ ]]; then
 	echo "Please enter 1 to output the messages to the CLI or 2 for log file output to output.txt"
@@ -29,6 +32,6 @@ elif [[ $1 =~ ^[0-9]+$ ]]; then
 			message="The maximum number of processes NOT exceeded"
 		fi
 	elif [[ $1 == 2 ]]; then
-		$timestamp + $message >>output2.txt
+		echo $timestamp + $message >>output2.txt
 	fi
 fi
