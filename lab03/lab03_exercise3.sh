@@ -6,7 +6,7 @@ message="Time of execution: $timestamp"
 if [[ $# != 2 ]]; then
         echo "Input invalid. Please enter two arguments"
         exit 1
-elif [[ $1  == 0 || $2 < 3 || $2 == 0 ]]; then
+elif [[ $1  == 0 && ($2 != 1 || $2 != 2 ) ]]; then
 	echo "1st argument needs to be a number greater than 0"
         echo "2nd argument needs to be either:"
 	echo "1 for output to the CLI OR 2 for output to the log file"
@@ -32,8 +32,7 @@ elif [[ $2 == 1 ]]; then
 	message="$1 is equal to $ct"
 	message="The maximum number of processes NOT exceeded"
 	fi
-        elif [[ $2 == 2 ]]; then
-		message="User chose option 2 for output to the CLI"
-                echo $timestamp + $message >>output2.txt
-        fi
+elif [[ $2 == 2 ]]; then
+	message="User chose option 2 for output to the CLI"
+	echo $timestamp + $message >>output2.txt
 fi
