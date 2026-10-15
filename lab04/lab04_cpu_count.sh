@@ -8,7 +8,7 @@
 
 
 #grep command 
-#grep processor /proc/cpuinfo
+#grep -c processor /proc/cpuinfo
 
 
 if [ $# != 1 ]; then
@@ -21,7 +21,8 @@ elif [[ $1 =~ ^[0-9]*$ ]]; then
 	echo "User provided $1 as the argument"
 fi
 
-num_cpu = $(grep processor /proc/cpuinfo | wc)
+num_cpu = $(grep -c processor /proc/cpuinfo | wc)
+echo $num_cpu
 if [ $1 -gt $num_cpu ]; then
 	echo "ERROR"
 	exit 1
