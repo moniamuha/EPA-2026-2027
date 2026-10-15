@@ -14,14 +14,17 @@
 if [ $# != 1 ]; then
 	echo "Please provide one argument"
 	exit 1
-elif [[ $1 =~ [^0-9] ]]; then
-	echo "The argument needs to be a number"
+elif [[ $1 =~ [^0-9] || $1 =~ ^[-][0-9] ]]; then
+	echo "The argument needs to be a positive number"
 	exit 1
-elif [[ $1 =~ ^]]; then
-	echo "The argument cannot be a negative number"
-	exit 1
-elif [[ $1 =~ ^[0-9]$ ]]; then
+elif [[ $1 =~ ^[0-9]*$ ]]; then
 	echo "User provided $1 as the argument"
 fi
 
-#num_cpu = $(grep processor /proc/cpuinfo | wc)
+num_cpu = $(grep processor /proc/cpuinfo | wc)
+if [ $1 -gt $num_cpu ]; then
+	echo "ERROR"
+	exit 1
+else
+	echo "OK"
+	exit 1
