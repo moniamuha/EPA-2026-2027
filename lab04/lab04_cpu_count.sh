@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#script to count nr of cpu cores
+#if fewer than $1, print an error & exit
+
+#COMMAND TO SEE NR OF CPU CORES
+#nproc --all
+
+
+#grep command 
+#grep processor /proc/cpuinfo
+
+
+if [ $# != 1 ]; then
+	echo "Please provide one argument"
+	exit 1
+elif [[ $1 =~ [^0-9] ]]; then
+	echo "The argument needs to be a number"
+	exit 1
+elif [[ $1 =~ ^]]; then
+	echo "The argument cannot be a negative number"
+	exit 1
+elif [[ $1 =~ ^[0-9]$ ]]; then
+	echo "User provided $1 as the argument"
+fi
+
+#num_cpu = $(grep processor /proc/cpuinfo | wc)
