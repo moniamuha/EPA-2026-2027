@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [[ $# != 2 ]]; then
         echo "Input invalid. Please enter two arguments"
         exit 1
