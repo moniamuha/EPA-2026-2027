@@ -9,6 +9,8 @@
 
 #grep command 
 #grep -c processor /proc/cpuinfo
+#OR
+#grep -c processor nproc
 
 
 if [ $# != 1 ]; then
