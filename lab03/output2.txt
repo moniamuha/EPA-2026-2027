@@ -3,3 +3,21 @@
 2026-10-14_17-48-37 + User chose option 2 for output to the CLI
 2026-10-14_17-54-37 + User chose option 2 for output to the CLI +
 2026-10-14_17-56-39 + User chose option 2 for output to the CLI +
+2026-10-15_11-21-22 + User chose option 2 for output to the CLI + User passed 1 into the script
+2026-10-15_11-29-14 + User chose option 2 for output to the CLI + User passed 1 into the script
+2026-10-15_11-30-26
+User chose option 2 for output to the CLI
+User passed 1 into the script
+User chose option 2 for output to the CLI
+User passed 1 into the script
+User chose option 2 for output to the CLI
+User passed 565 into the script
+2026-10-15_11-36-45
+User chose option 2 for output to the CLI
+User passed 56 into the script
+2026-10-15_11-38-03
+User passed 56 into the script
+The maximum number of processes NOT exceeded
+2026-10-15_11-38-17
+User passed 232 into the script
+Maximum number of processes exceeded
